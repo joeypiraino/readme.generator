@@ -1,12 +1,13 @@
 /** @format */
 
-// array of questions for user
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
+const appendFileSync = util.promisify(fs.appendFile);
 
+// array of questions for user
 const questions = [
 	{
 		type: "input",
@@ -39,11 +40,11 @@ const questions = [
 		message: "Please enter instructions on how to run tests for your project:",
 	},
 	{
-		type: "input",
+		type: "list",
 		name: "license",
 		message:
-			"Choose (retype) which open source license you would like to use for your " +
-			"project: None, MIT License, or ISC License.",
+			"Choose which open source license you would like to use for your project:",
+		choices: ["None", "MIT License", "ISC License"],
 	},
 	{
 		type: "input",
@@ -58,10 +59,124 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+	fs.writeFile("README.md", function (err) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log("README file successfully created!");
+		}
+	});
+}
 
 // function to initialize program
-function init() {}
+function init() {
+	inquirer.prompt(questions).then((response) => {
+		fs.appendFileSync("README.md", "#" + response.title + "\n", function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("Title of the project was successfully appended!");
+			}
+		});
+
+		fs.appendFileSync("README.md", response.description + "\n", function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("Description of project was successfully appended!");
+			}
+		});
+
+		fs.appendFileSync(
+			"README.md",
+			"## Installation" + "\n" + response.install + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(
+						"Instructions for installation were successfully appended!"
+					);
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Usage" + "\n" + response.usage + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("Usage Information was successfully appended!");
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Contribution Guidelines" + "\n" + response.guide + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("Contribution Guidelines were successfully appended!");
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Testing" + "\n" + response.test + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(
+						"Instructions for running Tests were successfully appended!"
+					);
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Licensing" + "\n" + response.license + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("The chosen License was successfully appended!");
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Questions" + "\n" + response.github + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("Your GitHub Username was successfully appended!");
+				}
+			}
+		);
+
+		fs.appendFileSync(
+			"README.md",
+			"## Questions" + "\n" + response.email + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("Your Email Address was successfully appended!");
+				}
+			}
+		);
+	});
+}
 
 // function call to initialize program
 init();
