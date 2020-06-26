@@ -74,7 +74,9 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
 	inquirer.prompt(questions).then((response) => {
-		fs.appendFileSync("README.md", "#" + response.title + "\n", function (err) {
+		fs.appendFileSync("README.md", "# " + response.title + "\n", function (
+			err
+		) {
 			if (err) {
 				console.log(err);
 			} else {
@@ -166,17 +168,15 @@ function init() {
 			}
 		);
 
-		fs.appendFileSync(
-			"README.md",
-			"## Questions" + "\n" + response.email + "\n",
-			function (err) {
-				if (err) {
-					console.log(err);
-				} else {
-					console.log("Your Email Address was successfully appended!");
-				}
+		fs.appendFileSync("README.md", "\n" + response.email + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("Your Email Address was successfully appended!");
 			}
-		);
+		});
 	});
 }
 

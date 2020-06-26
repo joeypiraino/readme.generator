@@ -1,32 +1,28 @@
-<!-- @format -->
-
-#README Generator
-This project involves use of node and javascript to create a README.md file from the command line
-
+# fdsfds
+fdsfdsfds
 ## Installation
-
-To install this project, clone this repository to your local drive and then install it with the command: "npm install"
-
+fdsfdsf
 ## Usage
-
-After installation,run the command "node index.js" to start the program
-
+dsfdsfds
 ## Contribution Guidelines
-
-This application only works on your own local drive, so contributions won't be necessary or possible
-
+fdsfd
 ## Testing
-
-To run a test for this application, enter the command "npm test"
-
+sfdsfds
 ## Licensing
-
-MIT License
-
+None
+# fdsfdsf
+dsfds
+## Installation
+fdsfs
+## Usage
+fdsfds
+## Contribution Guidelines
+fdsfdsf
+## Testing
+dsfds
+## Licensing
+None
 ## Questions
+If you need to reach out to me, my GitHub is @joeypiraino
 
-@joeypiraino
-
-## Questions
-
-joeypiraino@gmail.com
+or you can reach me at my Email Address: joeypiraino@gmail.com
