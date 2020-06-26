@@ -1,8 +1,10 @@
 /** @format */
 
+const path = require("path");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const genMarkdown = require("./generateMarkdown");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 const appendFileSync = util.promisify(fs.appendFile);
@@ -60,7 +62,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-	return writeFileAsync("README.md", questions, function (err) {
+	return fs.writeFileAsync("README.md", questions, function (err) {
 		if (err) {
 			console.log(err);
 		} else {
