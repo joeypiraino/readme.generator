@@ -46,7 +46,7 @@ const questions = [
 		name: "license",
 		message:
 			"Choose which open source license you would like to use for your project:",
-		choices: ["None", "MIT License", "ISC License"],
+		choices: ["None", "MIT", "ISC"],
 	},
 	{
 		type: "input",
