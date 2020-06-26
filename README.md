@@ -2,6 +2,10 @@
 
 # README Generator
 
+[Walkthrough Video Part 1 (5 min)](https://drive.google.com/file/d/1bmJCOFrwkoOjqMpFtzNtoA2rKdpTQOI9/view)
+
+[Walthrough Video Part 2 (28 sec)](https://drive.google.com/file/d/1JnBEVGDzyRYrKBAVbo9CskXc4Z0cEg8z/view)
+
 This project involves use of node and javascript to create a README.md file on the repository from the command line
 
 ## Installation
