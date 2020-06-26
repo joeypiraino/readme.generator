@@ -59,12 +59,6 @@ const questions = [
 ];
 
 // function to write README file
-////////
-////////
-////////
-////////
-////////
-////////THIS BELOW IS WHERE YOU LEFT OFF FROM LAST NIGHT :)
 function writeToFile(fileName, data) {
 	return writeFileAsync("README.md", questions, function (err) {
 		if (err) {
